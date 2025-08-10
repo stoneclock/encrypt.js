@@ -174,8 +174,8 @@ Pytacrypt.CaesarDecrypt = function(text) {
 }
 
 Pytacrypt.KeyboardShiftDecrypt = function(text, direction = "right", shift = 1) {
-    //let shift = parseInt(text.slice(-2));
-    //if(shift < 10) shift = parseInt(text.slice(-1));
+    let shift = parseInt(text.slice(-2));
+    if(shift < 10) shift = parseInt(text.slice(-1));
     return Pytacrypt.KeyboardShiftEncrypt(text.slice(0, -4), text[text.length-3] === "r" ? "left" : "right", shift).slice(0, -4);
 }
 
@@ -184,6 +184,7 @@ Pytacrypt.MorseCodeDecrypt = function(text) {
     const firstLetter = text.split(" ")[0];
 
     for(const i in Pytacrypt.morseCodeReverseObject) {
+        if(i == "/") continue; // Skip the space character
         text = text.replaceAll(" " + i + " ", " " + Pytacrypt.morseCodeReverseObject[i] + " ");
         text = text.replaceAll(" " + i + " ", " " + Pytacrypt.morseCodeReverseObject[i] + " ");
         if(Pytacrypt.isLetter(Pytacrypt.morseCodeReverseObject[i]))
@@ -191,11 +192,13 @@ Pytacrypt.MorseCodeDecrypt = function(text) {
     }
 
     if(firstLetter.endsWith("c")) 
-        text = text.replace(" " + firstLetter + "c ", " " + Pytacrypt.morseCodeReverseObject[firstLetter.replace("c", "")].toUpperCase() + " ");
+        text = text.replace(firstLetter + " ", Pytacrypt.morseCodeReverseObject[firstLetter.replace("c", "")].toUpperCase() + " ");
     else
-        text = text.replace(firstLetter, Pytacrypt.morseCodeReverseObject[firstLetter]);
+        text = text.replace(firstLetter + " ", Pytacrypt.morseCodeReverseObject[firstLetter]);
 
+    text = text.replaceAll(" ", "");
+    text = text.replaceAll("/", " ");
     return text;
 }
 
-console.log(Pytacrypt.MorseCodeDecrypt("....c . .-.. .-.. --- / .--c --- .-. .-.. -.. !mcde")); // Example usage
+// console.log(Pytacrypt.MorseCodeDecrypt("....c . .-.. .-.. --- / .--c --- .-. .-.. -.. !mcde")); // Example usage
