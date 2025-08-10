@@ -12,26 +12,26 @@
     </tr>
     <tr>
         <th>ROT13</th>
-        <th>```Pytacrypt.ROT13encrypt(text)```</th>
-        <th>```Pytacrypt.ROT13decrypt(text)```</th>
-        <th>```ro13```</th>
+        <th>Pytacrypt.ROT13encrypt(text)</th>
+        <th>Pytacrypt.ROT13decrypt(text)</th>
+        <th>ro13</th>
     </tr>
     <tr>
         <th>Caesar Cipher</th>
-        <th>```Pytacrypt.CaesarEncrypt(text, shift = 3)```</th>
-        <th>```Pytacrypt.CaesarDecrypt(text)```</th>
-        <th>```ca{shift}```</th>
+        <th>Pytacrypt.CaesarEncrypt(text, shift = 3)</th>
+        <th>Pytacrypt.CaesarDecrypt(text)</th>
+        <th>ca{shift}</th>
     </tr>
     <tr>
         <th>Keyboard Shift</th>
-        <th>```Pytacrypt.KeyboardShiftEncrypt(text, direction = "right", shift = 1)```</th>
-        <th>```Pytacrypt.KeyboardShiftDecrypt( = function()text, direction = "right", shift = 1)```</th>
-        <th>```k{direction("l"/"r")}{shift}```</th>
+        <th>Pytacrypt.KeyboardShiftEncrypt(text, direction = "right", shift = 1)</th>
+        <th>Pytacrypt.KeyboardShiftDecrypt( = function()text, direction = "right", shift = 1)</th>
+        <th>k{direction("l"/"r")}{shift}</th>
     </tr>
         <th>Morse Code</th>
-        <th>```Pytacrypt.MorseCodeEncrypt(text, capitalLetters = true)```</th>
-        <th>```Pytacrypt.MorseCodeDecrypt(text)```</th>
-        <th>```mcde```</th>
+        <th>Pytacrypt.MorseCodeEncrypt(text, capitalLetters = true)</th>
+        <th>Pytacrypt.MorseCodeDecrypt(text)</th>
+        <th>mcde</th>
     </tr>
 </table>
 
