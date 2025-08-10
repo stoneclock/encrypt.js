@@ -25,7 +25,7 @@
     <tr>
         <th>Keyboard Shift</th>
         <th>Pytacrypt.KeyboardShiftEncrypt(text, direction = "right", shift = 1)</th>
-        <th>Pytacrypt.KeyboardShiftDecrypt( = function()text, direction = "right", shift = 1)</th>
+        <th>Pytacrypt.KeyboardShiftDecrypt(text, direction = "right", shift = 1)</th>
         <th>k{direction("l"/"r")}{shift}</th>
     </tr>
         <th>Morse Code</th>
